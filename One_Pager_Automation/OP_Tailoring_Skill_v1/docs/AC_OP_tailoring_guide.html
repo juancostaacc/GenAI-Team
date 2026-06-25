@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AC One Pager Tailoring — Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --acc-purple:#A100FF;
+    --acc-purple-dark:#7500C0;
+    --acc-plum:#460073;
+    --acc-lavender:#E6DCFF;
+    --acc-lavender-mid:#C8B0F5;
+    --acc-white:#FFFFFF;
+    --acc-neutral-light:#F7F6FA;
+    --acc-neutral-mid:#E6E6E6;
+    --acc-neutral-label:#969696;
+    --acc-text:#0A0A0A;
+    --acc-text-soft:#3D3D3D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#d9d9de;font-family:'Plus Jakarta Sans','Arial',sans-serif;}
+  /* A4 portrait at 96dpi */
+  .page{
+    width:794px;
+    height:1123px;
+    margin:24px auto;
+    background:var(--acc-white);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  /* highlight = the same purple keyword mark the One Pager itself applies */
+  .hl{color:var(--acc-purple);font-weight:700;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(135deg,#460073 0%,#7500C0 55%,#A100FF 100%);
+    color:var(--acc-white);
+    padding:30px 44px 26px;
+    position:relative;
+  }
+  .eyebrow{
+    font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--acc-lavender-mid);margin-bottom:12px;
+  }
+  .hero h1{
+    font-size:40px;font-weight:800;line-height:1.04;letter-spacing:-.015em;
+  }
+  .hero h1 .gt{color:var(--acc-lavender-mid);font-weight:700;}
+  .hero .strap{
+    font-size:14px;font-weight:400;line-height:1.45;color:#EFE6FF;
+    margin-top:14px;max-width:560px;
+  }
+  .hero .strap b{font-weight:700;color:var(--acc-white);}
+
+  /* ---------- BODY GRID ---------- */
+  .body{
+    flex:1;
+    padding:30px 44px 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto auto auto auto;
+    gap:30px 26px;
+    align-content:space-between;
+  }
+  .full{grid-column:1 / -1;}
+
+  .mod-head{
+    font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--acc-purple-dark);margin-bottom:11px;display:flex;align-items:center;gap:9px;
+  }
+  .mod-head .n{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:19px;height:19px;border-radius:50%;
+    background:var(--acc-purple);color:#fff;font-size:11px;font-weight:800;
+    letter-spacing:0;flex:none;
+  }
+
+  p.lead{font-size:12.5px;line-height:1.55;color:var(--acc-text-soft);}
+  p.lead b{color:var(--acc-text);font-weight:700;}
+
+  /* engine steps */
+  .steps{display:flex;flex-direction:column;gap:9px;margin-top:2px;}
+  .step{
+    display:flex;gap:11px;align-items:flex-start;
+    border-left:3px solid var(--acc-lavender-mid);
+    padding:2px 0 2px 12px;
+  }
+  .step .si{
+    font-size:11px;font-weight:800;color:var(--acc-purple);
+    min-width:16px;line-height:1.5;
+  }
+  .step .st{font-size:11.5px;line-height:1.42;color:var(--acc-text-soft);}
+  .step .st b{color:var(--acc-text);font-weight:700;}
+
+  /* bring chips */
+  .bring{display:flex;flex-direction:column;gap:8px;}
+  .chip{
+    background:var(--acc-neutral-light);
+    border-left:3px solid var(--acc-purple);
+    padding:9px 13px;border-radius:2px;
+  }
+  .chip .ct{font-size:11.5px;font-weight:700;color:var(--acc-text);}
+  .chip .cs{font-size:10.5px;color:var(--acc-neutral-label);margin-top:1px;line-height:1.35;}
+
+  /* setup */
+  .setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;}
+  ol.clean{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:6px;}
+  ol.clean li{
+    counter-increment:s;position:relative;padding-left:24px;
+    font-size:11.5px;line-height:1.42;color:var(--acc-text-soft);
+  }
+  ol.clean li::before{
+    content:counter(s);position:absolute;left:0;top:0;
+    width:16px;height:16px;border-radius:50%;
+    background:var(--acc-lavender);color:var(--acc-purple-dark);
+    font-size:9.5px;font-weight:800;display:flex;align-items:center;justify-content:center;
+  }
+  ol.clean li b{color:var(--acc-text);font-weight:700;}
+  .pathbox{
+    background:var(--acc-plum);color:#EFE6FF;border-radius:3px;
+    padding:9px 13px;font-size:11px;line-height:1.45;margin-top:9px;
+  }
+  .pathbox b{color:#fff;}
+
+  /* setup elevated panel */
+  .setup-panel{
+    background:var(--acc-neutral-light);
+    border-top:2px solid var(--acc-purple-dark);
+    border-radius:3px;
+    padding:18px 22px 20px;
+  }
+  .setup-panel .mod-head{margin-bottom:14px;font-size:12.5px;}
+  .setup-panel .mod-head .n{width:21px;height:21px;font-size:12px;}
+
+  /* max-out tips */
+  .tips{display:flex;flex-direction:column;gap:10px;}
+  .tip{display:flex;gap:11px;align-items:flex-start;}
+  .tip .ic{
+    flex:none;width:30px;height:30px;border-radius:4px;
+    background:var(--acc-lavender);color:var(--acc-purple-dark);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;
+  }
+  .tip .tt{font-size:11.5px;font-weight:700;color:var(--acc-text);line-height:1.3;}
+  .tip .td{font-size:11px;color:var(--acc-text-soft);line-height:1.4;margin-top:2px;}
+  .tip .td b{color:var(--acc-purple-dark);}
+
+  .note{
+    grid-column:1 / -1;
+    background:var(--acc-neutral-light);
+    border:1px solid var(--acc-neutral-mid);
+    border-left:3px solid var(--acc-purple);
+    border-radius:2px;padding:11px 15px;
+    font-size:11px;line-height:1.5;color:var(--acc-text-soft);
+  }
+  .note b{color:var(--acc-text);font-weight:700;}
+
+  /* ---------- FOOTER ---------- */
+  .footer{
+    border-top:1px solid var(--acc-neutral-mid);
+    margin:0 44px;
+    padding:11px 0 16px;
+    display:flex;justify-content:space-between;align-items:flex-end;gap:20px;
+  }
+  .footer .fl{font-size:9px;color:var(--acc-neutral-label);line-height:1.5;max-width:520px;}
+  .footer .fl b{color:var(--acc-purple-dark);font-weight:700;}
+  .footer .fr{font-size:9px;color:var(--acc-neutral-label);text-align:right;white-space:nowrap;}
+  .footer .fr .v{color:var(--acc-purple-dark);font-weight:800;font-size:11px;letter-spacing:.04em;}
+
+  @media print{
+    html,body{background:#fff;}
+    .page{margin:0;box-shadow:none;}
+    @page{size:A4 portrait;margin:0;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">Claude Skill · Version AC</div>
+    <h1><span class="gt">&gt;</span> One Pager Tailoring</h1>
+    <p class="strap">Turns your real experience into a One Pager built for a specific role, in the words that role uses. It <b>selects, translates and reframes</b> what you have actually done. It never invents a line.</p>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- HOW IT WORKS -->
+    <div>
+      <div class="mod-head"><span class="n">1</span> How the engine works</div>
+      <div class="steps">
+        <div class="step"><span class="si">01</span><span class="st"><b>Pools your experience.</b> One CV or several (old One Pagers, LinkedIn export) read as a single source, deduplicated.</span></div>
+        <div class="step"><span class="si">02</span><span class="st"><b>Enriches what's thin.</b> A short, skippable round of questions surfaces missing metrics and scope.</span></div>
+        <div class="step"><span class="si">03</span><span class="st"><b>Translates the gaps.</b> When the role asks for something your CV doesn't show, it proposes a <span class="hl">bridge</span> and asks, so real experience surfaces instead of being dropped.</span></div>
+        <div class="step"><span class="si">04</span><span class="st"><b>Selects and reframes.</b> Picks the 3 to 7 strongest experiences and aligns their wording to the role where the work genuinely matches.</span></div>
+        <div class="step"><span class="si">05</span><span class="st"><b>Builds the deck.</b> Marks the matching phrases in <span class="hl">purple</span>, generates the .pptx, and explains every choice in a change note.</span></div>
+      </div>
+    </div>
+
+    <!-- WHAT TO BRING -->
+    <div>
+      <div class="mod-head"><span class="n">2</span> What to bring, each time</div>
+      <div class="bring">
+        <div class="chip"><div class="ct">Your experience documents</div><div class="cs">One CV, or several. More angles covered means more to draw from.</div></div>
+        <div class="chip"><div class="ct">A headshot photo</div><div class="cs">Square crop, about 1.22 inches, for the photo frame.</div></div>
+        <div class="chip"><div class="ct">The job description</div><div class="cs">A link, or the text pasted in. This is what everything is tailored to.</div></div>
+      </div>
+      <div class="pathbox">The agent asks for anything missing before it starts, and it replies in <b>your language</b>, whichever one you write in.</div>
+    </div>
+
+    <!-- SETUP -->
+    <div class="full setup-panel">
+      <div class="mod-head"><span class="n">3</span> Set it up once, then only bring the job description</div>
+      <div class="setup-grid">
+        <div>
+          <ol class="clean">
+            <li>In Claude.ai, enable <b>Code execution and file creation</b> under Settings, Capabilities. Without it the skill cannot build files.</li>
+            <li>Go to <b>Customize, Skills</b>, click <b>+ Create skill</b>, then <b>Upload a skill</b>, and select the AC_OP_tailoring .zip.</li>
+            <li>Turn the skill on with its toggle.</li>
+          </ol>
+        </div>
+        <div>
+          <ol class="clean" start="4">
+            <li>Create a <b>Project</b> (name it "One Pager") and upload your CVs and photo to <b>Project Knowledge</b>. They stay loaded for good.</li>
+            <li>Open a chat inside the Project and say: <b>"Tailor my One Pager for this role"</b>, with the job description.</li>
+            <li>Get the .pptx plus its change note. When your experience changes, replace the file in Project Knowledge.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- GET THE MOST -->
+    <div class="full">
+      <div class="mod-head"><span class="n">4</span> Get the most out of it</div>
+      <div class="setup-grid">
+        <div class="tips">
+          <div class="tip"><div class="ic">&#127908;</div><div><div class="tt">Answer by voice, not by typing</div><div class="td">For experiences and results, dictate your answers. Spoken, you give more detail and nuance than polished text. Save typing for short lists like tools or dates.</div></div></div>
+          <div class="tip"><div class="ic">&#128218;</div><div><div class="tt">Load every CV you have</div><div class="td">Spread across an operations CV and a strategy one? Load both. The agent merges them and asks which is <b>primary</b> if it needs to.</div></div></div>
+        </div>
+        <div class="tips">
+          <div class="tip"><div class="ic">&#128279;</div><div><div class="tt">Take the bridge questions seriously</div><div class="td">When it asks "you did X, isn't that what the role calls Y?", that is your chance to claim real experience you would otherwise leave off the page. Be specific, and honest.</div></div></div>
+          <div class="tip"><div class="ic">&#9989;</div><div><div class="tt">Trust the gap flags</div><div class="td">If the role wants something you have not done, it says so rather than faking it. A One Pager that survives scrutiny is the point.</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note"><b>One honest rule, everywhere.</b> Nothing reaches the page unless your documents support it or you confirm it in the chat. The skill aligns terminology only where the underlying work is truly the same. It will not invent skills, titles, metrics or scope.</div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="fl">Built by the <b>PS GenAI Team</b></div>
+    <div class="fr"><div class="v">AC_OP_tailoring</div>One Pager Tailoring Agent</div>
+  </div>
+
+</div>
+</body>
+</html>
